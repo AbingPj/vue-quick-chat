@@ -23,6 +23,7 @@
                       :timestamp-config="timestampConfig"
                       :link-options="linkOptions"
                       :accept-image-types="'.png, .jpeg'"
+                      :hide-header-paticipants-text="hideHeaderPaticipantsText"
                       @onImageClicked="onImageClicked"
                       @onImageSelected="onImageSelected"
                       @onMessageSubmit="onMessageSubmit"
@@ -156,7 +157,8 @@
                     bottomLeft: "10px",
                     bottomRight: "10px",
                 },
-                hideCloseButton: false,
+                hideCloseButton: true,
+                hideHeaderPaticipantsText: true,
                 submitIconSize: 24,
                 submitImageIconSize: 24,
                 closeButtonIconSize: "20px",

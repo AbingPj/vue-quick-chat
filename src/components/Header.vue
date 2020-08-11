@@ -5,7 +5,7 @@
               :myself="myself"></slot>
         <div v-if="!hasHeaderSlot" class="header-title">
             <p class="header-title-text" :style="{color: colors.header.text}">{{chatTitle}}</p>
-            <p class="header-paticipants-text">
+            <p v-if="!hideHeaderPaticipantsText" class="header-paticipants-text">
                 <span>{{myself.name}}, </span>
                 <span v-for="(participant, index) in participants" :key="participant.id">{{participant.name}}{{participants.length - index - 1 ? ', ' : ''}}</span>
             </p>
@@ -46,6 +46,11 @@
                 type: Boolean,
                 required: false,
                 default: false
+            },
+            hideHeaderPaticipantsText: {
+                type: Boolean,
+                required: false,
+                default: true
             },
             closeButtonIconSize: {
                 type: String,

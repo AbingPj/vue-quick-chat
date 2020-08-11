@@ -2,7 +2,8 @@
     <div class="quick-chat-container"
          :style="{'border-bottom-left-radius': borderStyle.bottomLeft, 'border-bottom-right-radius': borderStyle.bottomRight, 'border-top-right-radius': borderStyle.topRight, 'border-top-left-radius': borderStyle.topLeft}">
         <Header v-if="displayHeader" :colors="colors" :border-style="borderStyle" 
-                :hide-close-button="hideCloseButton" :close-button-icon-size="closeButtonIconSize" @onClose="onClose()">
+                :hide-close-button="hideCloseButton" :close-button-icon-size="closeButtonIconSize" :hide-header-paticipants-text="hideHeaderPaticipantsText"
+                @onClose="onClose()">
             <template #header>
                 <slot name="header"></slot>
             </template>
@@ -78,6 +79,11 @@
                 }
             },
             hideCloseButton: {
+                type: Boolean,
+                required: false,
+                default: false
+            },
+            hideHeaderPaticipantsText: {
                 type: Boolean,
                 required: false,
                 default: false
